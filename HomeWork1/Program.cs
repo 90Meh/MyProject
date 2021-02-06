@@ -4,10 +4,14 @@ namespace HomeWork1
 {
     class Program
     // Type: int, max: 2000, min: -2000 Максимальное и минимальное значение всех переменных
+
+        //Значения ввести самому
+        // Считать два числа 1 длина массива 2 стартовое значение 3 шаг изменения.
+        // Создать массив и вывести его на экран.
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Type     | Min                            | Max                           ");
+            /*Console.WriteLine("Type     | Min                            | Max                           ");
             Console.WriteLine($"Byte     | {byte.MinValue,-31}| {byte.MaxValue,-32}");
             Console.WriteLine($"Short    | {short.MinValue,-31}| {short.MaxValue}");
             Console.WriteLine($"Int      | {int.MinValue,-31}| {int.MaxValue,-31}");
@@ -21,9 +25,9 @@ namespace HomeWork1
             Console.WriteLine();
             String str1 = "";
             Console.WriteLine(str1.PadLeft(100 + str1.Length, '|'));
-            Console.WriteLine();
+            Console.WriteLine();*/
 
-            Task2();
+            Task3();
 
 
             /*Console.Write("Type: byte, min: ");
@@ -90,7 +94,7 @@ namespace HomeWork1
             Console.Write("Введите символ!\n");
             string vvod = Console.ReadLine();
             bool IsParsed = int.TryParse(vvod, out int Znach);
-            
+
 
 
 
@@ -109,7 +113,7 @@ namespace HomeWork1
                 {
                     Console.WriteLine("Ono bolshe 10!");
                 }
-                
+
 
 
 
@@ -132,7 +136,7 @@ namespace HomeWork1
             }
 
             else
-            
+
             {
                 int poz = vvod.IndexOf('.');
                 Console.WriteLine("Eto ne Chislo!");
@@ -150,7 +154,7 @@ namespace HomeWork1
 
             }
 
-            
+
             /* if (IsParsed)
 
              {
@@ -174,11 +178,42 @@ namespace HomeWork1
 
         }
 
-        //Будет вводиться некоторая строка. Выводить каждый символ на новой строке.
-        //Условия если это точка вместо сивола вывести строку DOT если тире вывести DASH если пробел то SPACE.
-        //Если попадается звёздочка прервать вывод. Swich не If
+        static void Task3()
+        {
+            Console.WriteLine("Vvedite stroku!");
+            string vvod = Console.ReadLine();
+            for (int NomSim = 0; NomSim < vvod.Length; NomSim++)
+            {
+                if(vvod [NomSim] == '*')
+                {
+                    break;
+                }
+                switch (vvod [NomSim])
+                {
+                    case '.':
+                        Console.WriteLine("DOT");
+                        break;
+                    case '-':
+                        Console.WriteLine("DASH");
+                        break;
+                    case ' ':
+                        Console.WriteLine("SPASE");
+                        break;
+                    default:
+                        Console.WriteLine(vvod[NomSim]);
+                        break;
+                }
+                
+            }
+
+            
 
 
+            //Будет вводиться некоторая строка. Выводить каждый символ на новой строке.
+            //Условия если это точка вместо сивола вывести строку DOT если тире вывести DASH если пробел то SPACE.
+            //Если попадается звёздочка прервать вывод. Swich не If
+
+
+        }
     }
-
 }

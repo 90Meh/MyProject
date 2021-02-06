@@ -6,7 +6,7 @@ namespace Third
     {
         static void Main(string[] args)
         {
-            Task10();
+            Task11();
 
         }
 
@@ -168,7 +168,7 @@ namespace Third
         static void Task10()
         {
             string Hi = "Hello world!";
-            for (int zero = 0; zero < Hi.Length; zero++)
+            for (int zero = 0; zero < Hi.Length; zero++) //Фрагмент кода вызыается "TAB"
             {
                 if(Hi [zero] == ' ')
                 {
@@ -180,6 +180,51 @@ namespace Third
                 }
                 Console.WriteLine(Hi [zero]);
             }
+        }
+
+        /*
+         * 5 значений
+         * i    mass[i]
+         * 0    2
+         * 1    4
+         * 2    6
+         * 3    8
+         * 4    10
+         */
+        static void Task11() //массивы
+        {
+            //Массивы хранят последовательность однотипных данных. Могут быть подмассивы. Массив ссылочный тип данных. Когда значения заранее неизвестны. 
+            //С массивом можно работать как со строкой
+            //int[] Определение типа массива
+            int[] mass = new int[5];
+            int znach = 2;
+                        
+            for (int i = 0; i < mass.Length; i++)
+            {
+                // mass[i] = znach;
+                // znach += 2;
+                mass[i] = (i + 1) * 2;
+            }
+
+            Console.Write("[");
+
+            /*foreach (int item in mass)
+            {
+                Console.Write($"{item}, ");
+            }*/
+
+            for (int i = 0; i < mass.Length; i++)
+            {
+                Console.Write(mass[i]);
+                //if (mass.Length - 2 >= i)
+                if (i < mass.Length -1)
+                {
+                    Console.Write(", ");
+                }
+
+            }
+
+            Console.WriteLine("]");
         }
 
 
