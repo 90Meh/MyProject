@@ -27,7 +27,7 @@ namespace HomeWork1
             Console.WriteLine(str1.PadLeft(100 + str1.Length, '|'));
             Console.WriteLine();*/
 
-            Task3();
+            Task4();
 
 
             /*Console.Write("Type: byte, min: ");
@@ -206,6 +206,7 @@ namespace HomeWork1
                 
             }
 
+
             
 
 
@@ -215,5 +216,64 @@ namespace HomeWork1
 
 
         }
+
+         static void Task4()
+        {
+            //Значения ввести самому
+            // Считать два числа 1 длина массива 2 стартовое значение 3 шаг изменения.
+            // Создать массив и вывести его на экран.
+            //2-ой: создать ещё один массив. В него скопировать значения из 1-ого в обратном порядке.
+            //3 - ий: в 1 - ом массиве центральный элемент(если число элементов чётное, то 2 центральных элемента) умножить на 2.
+            //И отдельное задание.
+            //Пользователь вводит длину массива.
+            //А тебе нужно создать массив указанной длины и заполнить его последовательностью Фибоначи(посмотри на вики) начиная с 0.
+
+
+           Console.WriteLine("Введите длину массива!");
+            string dlinaMSt = Console.ReadLine();
+            int dlinaMint = int.Parse(dlinaMSt);
+                
+            Console.WriteLine("Введите стартовое значение!");
+            string startSTR = Console.ReadLine();
+            int startInt = int.Parse(startSTR);
+
+            Console.WriteLine("Введите шаг изменения!");
+            string ShagSTR = Console.ReadLine();
+            int ShagInt = int.Parse(ShagSTR);
+ 
+
+            int[] mass = new int[dlinaMint];
+            
+            for (int i = 0; i < mass.Length; i++)
+            {
+                 mass[i] = startInt;
+                 startInt += ShagInt;
+                
+            }
+
+            Console.Write("[");
+
+            for (int i = 0; i < mass.Length; i++)
+            {
+                Console.Write(mass[i]);
+                //if (mass.Length - 2 >= i)
+                if (i < mass.Length - 1)
+                {
+                    Console.Write(", ");
+                }
+
+            }
+
+            Console.WriteLine("]");
+
+            //int[] mass2 = new int[mass.Length];
+            //for (int i = 0; i < length; i++)
+           // {
+
+            //
+
+        }
+
+        
     }
 }
