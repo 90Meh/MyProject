@@ -170,15 +170,15 @@ namespace Third
             string Hi = "Hello world!";
             for (int zero = 0; zero < Hi.Length; zero++) //Фрагмент кода вызыается "TAB"
             {
-                if(Hi [zero] == ' ')
+                if (Hi[zero] == ' ')
                 {
                     break; //Прервает текущий цикл.
                 }
-                if(Hi  [zero] == 'l')
+                if (Hi[zero] == 'l')
                 {
                     continue; //Заставляет цикл перейти к следующей итерации
                 }
-                Console.WriteLine(Hi [zero]);
+                Console.WriteLine(Hi[zero]);
             }
         }
 
@@ -197,8 +197,8 @@ namespace Third
             //С массивом можно работать как со строкой
             //int[] Определение типа массива
             int[] mass = new int[5];
-            int znach = 2;
-                        
+            //int znach = 2;
+
             for (int i = 0; i < mass.Length; i++)
             {
                 // mass[i] = znach;
@@ -217,7 +217,7 @@ namespace Third
             {
                 Console.Write(mass[i]);
                 //if (mass.Length - 2 >= i)
-                if (i < mass.Length -1)
+                if (i < mass.Length - 1)
                 {
                     Console.Write(", ");
                 }
@@ -225,6 +225,7 @@ namespace Third
             }
 
             Console.WriteLine("]");
+            
         }
 
 

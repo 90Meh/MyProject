@@ -4,6 +4,7 @@ namespace Forth
 {
     class Program
     {
+         //Пять чисел в массив разделённых пробелами, фильтр символов. Считывание только целых чисел.
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
@@ -42,8 +43,7 @@ namespace Forth
 
         static void task2()
         {
-            //Пять чисел в массив разделённых пробелами, фильтр символов. Считывание только целых чисел.
-            
+                       
             Console.WriteLine("Введите длину массива!");
             string DLMassStr = Console.ReadLine();
             int DLMassInt = int.Parse(DLMassStr);
