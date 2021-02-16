@@ -6,7 +6,7 @@ namespace First
     {
         static void Main(string[] args)
         {
-            /*int perem = 8;
+        /*    int perem = 8;
             Console.WriteLine("Hello World!");
             Console.Write("This Is My perem ");
             Console.Write(perem);
@@ -92,14 +92,14 @@ namespace First
             int Izero = Zero;
             Console.WriteLine(Izero);
             char Zero2 = (char)Izero;
-            Console.WriteLine(Zero2);*/
+            Console.WriteLine(Zero2);
 
             //Примитивные и ссылочные типы данных всё что выше примитивные типы.
 
             string str1 = "Hello World!";
             Console.WriteLine(str1);
             Console.WriteLine(str1.Length); //Длина строки
-            int perem = 0;
+            //int perem = 0;
             char CH1 = str1[perem]; //Квадратные скобки позиция символа
             string str2 = str1.Substring(0, 5);
             Console.WriteLine(str2);
@@ -149,7 +149,7 @@ namespace First
             Console.WriteLine(Perevod + 1);
             Console.WriteLine(decimal.Parse("531,7"));
 
-
+            */
         }
     }
 }

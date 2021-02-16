@@ -5,13 +5,13 @@ namespace HomeWork1
     class Program
     // Type: int, max: 2000, min: -2000 Максимальное и минимальное значение всех переменных
 
-        //Значения ввести самому
-        // Считать два числа 1 длина массива 2 стартовое значение 3 шаг изменения.
-        // Создать массив и вывести его на экран.
+    //Значения ввести самому
+    // Считать два числа 1 длина массива 2 стартовое значение 3 шаг изменения.
+    // Создать массив и вывести его на экран.
     {
         static void Main(string[] args)
         {
-         Task4();
+            Task4();
         }
         static void printMass(object[] mass)
         {
@@ -20,7 +20,7 @@ namespace HomeWork1
             for (int i = 0; i < mass.Length; i++)
             {
                 Console.Write(mass[i]);
-                 if (i < mass.Length - 1)
+                if (i < mass.Length - 1)
                 {
                     Console.Write(", ");
                 }
@@ -125,11 +125,11 @@ namespace HomeWork1
             string vvod = Console.ReadLine();
             for (int NomSim = 0; NomSim < vvod.Length; NomSim++)
             {
-                if(vvod [NomSim] == '*')
+                if (vvod[NomSim] == '*')
                 {
                     break;
                 }
-                switch (vvod [NomSim])
+                switch (vvod[NomSim])
                 {
                     case '.':
                         Console.WriteLine("DOT");
@@ -144,11 +144,11 @@ namespace HomeWork1
                         Console.WriteLine(vvod[NomSim]);
                         break;
                 }
-                
+
             }
 
 
-            
+
 
 
             //Будет вводиться некоторая строка. Выводить каждый символ на новой строке.
@@ -160,20 +160,11 @@ namespace HomeWork1
 
         static void Task4()
         {
-            //Значения ввести самому
-            // Считать два числа 1 длина массива 2 стартовое значение 3 шаг изменения.
-            // Создать массив и вывести его на экран.
-            //2-ой: создать ещё один массив. В него скопировать значения из 1-ого в обратном порядке.
-            //3 - ий: в 1 - ом массиве центральный элемент(если число элементов чётное, то 2 центральных элемента) умножить на 2.
-            //И отдельное задание.
-            //Пользователь вводит длину массива.
-            //А тебе нужно создать массив указанной длины и заполнить его последовательностью Фибоначи(посмотри на вики) начиная с 0.
 
-
-           Console.WriteLine("Введите длину массива!");
+            Console.WriteLine("Введите длину массива!");
             string dlinaMSt = Console.ReadLine();
             int dlinaMint = int.Parse(dlinaMSt);
-                
+
             Console.WriteLine("Введите стартовое значение!");
             string startSTR = Console.ReadLine();
             int startInt = int.Parse(startSTR);
@@ -181,15 +172,15 @@ namespace HomeWork1
             Console.WriteLine("Введите шаг изменения!");
             string ShagSTR = Console.ReadLine();
             int ShagInt = int.Parse(ShagSTR);
- 
+
 
             int[] mass = new int[dlinaMint];
-            
+
             for (int i = 0; i < mass.Length; i++)
             {
-                 mass[i] = startInt;
-                 startInt += ShagInt;
-                
+                mass[i] = startInt;
+                startInt += ShagInt;
+
             }
 
             Console.Write("[");
@@ -206,27 +197,31 @@ namespace HomeWork1
 
             Console.WriteLine("]");
 
-
-            int[] mass2 = mass;
-
-            /* Array.Reverse(mass2);
-             {
-                 Console.Write("[");
-
-                 for (int i = 0; i < mass2.Length; i++)
-                 {
-                     Console.Write(mass2[i]);
-                     if (i < mass2.Length - 1)
-                     {
-                         Console.Write(", ");
-                     }
-
-                 }
-
-                 Console.WriteLine("]");
-             }*/
-
             
+            int[] mass2 = new int[mass.Length];
+            Array.Copy(mass, mass2, mass.Length);
+            
+            
+              
+            
+            /*Array.Reverse(mass2);
+
+            Console.Write("[");
+
+            for (int i = 0; i < mass2.Length; i++)
+            {
+                Console.Write(mass2[i]);
+                if (i < mass2.Length - 1)
+                {
+                    Console.Write(", ");
+                }
+
+            }
+
+            Console.WriteLine("]");*/
+
+
+
             int n = mass2.Length; // длина массива
             int k = n / 2;          // середина массива
             int temp;               // вспомогательный элемент для обмена значениями
@@ -236,11 +231,48 @@ namespace HomeWork1
                 mass2[i] = mass2[n - i - 1];
                 mass2[n - i - 1] = temp;
             }
-            foreach (int i in mass2)
+            Console.Write("[");
+            /*foreach (int i in mass2)
             {
-                Console.Write($"{i} \t");
+                Console.Write($"{i}, ");
+            }
+            Console.WriteLine("]");*/
+            for (int i = 0; i < mass2.Length; i++)
+            {
+                Console.Write(mass2[i]);
+                if (i < mass2.Length - 1)
+                {
+                    Console.Write(", ");
+                }
+
             }
 
+            Console.WriteLine("]");
+
+            int k1 = mass.Length / 2;
+            double kD = mass.Length % 2.0;
+
+            Console.WriteLine(kD);
+
+            if (kD==0)
+            {
+                Console.WriteLine($"Массив чётный. Числа в середине масива * 2 - {mass[k1] * 2}, {mass[k1 + 1] * 2}");
+                //При mass.Length == 2 ошибка
+            }
+            else
+            {
+                Console.WriteLine($"Массив нечётный. Число в середине массива * 2 - {mass[k1] * 2}");
+            }
+            
+
+            //Значения ввести самому
+            // Считать два числа 1 длина массива 2 стартовое значение 3 шаг изменения.
+            // Создать массив и вывести его на экран.
+            //2-ой: создать ещё один массив. В него скопировать значения из 1-ого в обратном порядке.
+            //3 - ий: в 1 - ом массиве центральный элемент(если число элементов чётное, то 2 центральных элемента) умножить на 2.
+            //И отдельное задание.
+            //Пользователь вводит длину массива.
+            //А тебе нужно создать массив указанной длины и заполнить его последовательностью Фибоначи(посмотри на вики) начиная с 0.
 
 
 
@@ -264,14 +296,14 @@ namespace HomeWork1
             Console.WriteLine(str1.PadLeft(100 + str1.Length, '|'));
             Console.WriteLine();
 
-           
+
 
             Console.Write("Type: byte, min: ");
             Console.Write(byte.MinValue);
             Console.Write(", max: ");
             Console.WriteLine(byte.MaxValue);
-            
-            
+
+
             Console.Write("Type: short, min: ");
             Console.Write(short.MinValue);
             Console.Write(", max: ");
@@ -324,6 +356,6 @@ namespace HomeWork1
 
         }
 
-        
+
     }
 }
