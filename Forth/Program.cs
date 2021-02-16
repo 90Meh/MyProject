@@ -4,7 +4,7 @@ namespace Forth
 {
     class Program
     {
-         //Пять чисел в массив разделённых пробелами, фильтр символов. Считывание только целых чисел.
+       
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");

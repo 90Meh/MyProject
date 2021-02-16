@@ -11,7 +11,7 @@ namespace HomeWork1
     {
         static void Main(string[] args)
         {
-            Task4();
+            Task6();
         }
         static void printMass(object[] mass)
         {
@@ -197,14 +197,29 @@ namespace HomeWork1
 
             Console.WriteLine("]");
 
-            
+
             int[] mass2 = new int[mass.Length];
-            Array.Copy(mass, mass2, mass.Length);
-            
-            
-              
-            
-            /*Array.Reverse(mass2);
+            // Array.Copy(mass, mass2, mass.Length);
+
+            for (int i = mass.Length-1; i >= 0 ; i--)
+            {
+                mass2[mass.Length -i-1] = mass[i];
+
+                /*
+                 * mass mass2
+                 * 0    4
+                 * 1    3
+                 * 2    2
+                 * 3    1
+                 * 4    0
+                 */
+            }
+
+
+
+            /*
+
+            Array.Reverse(mass2);
 
             Console.Write("[");
 
@@ -218,9 +233,9 @@ namespace HomeWork1
 
             }
 
-            Console.WriteLine("]");*/
+            Console.WriteLine("]");
 
-
+            
 
             int n = mass2.Length; // длина массива
             int k = n / 2;          // середина массива
@@ -236,7 +251,7 @@ namespace HomeWork1
             {
                 Console.Write($"{i}, ");
             }
-            Console.WriteLine("]");*/
+            Console.WriteLine("]");
             for (int i = 0; i < mass2.Length; i++)
             {
                 Console.Write(mass2[i]);
@@ -249,21 +264,27 @@ namespace HomeWork1
 
             Console.WriteLine("]");
 
+            */
+
+
             int k1 = mass.Length / 2;
-            double kD = mass.Length % 2.0;
+           //Console.WriteLine(mass.Length % 2)
 
-            Console.WriteLine(kD);
-
-            if (kD==0)
+            if (mass.Length % 2 == 0)
             {
-                Console.WriteLine($"Массив чётный. Числа в середине масива * 2 - {mass[k1] * 2}, {mass[k1 + 1] * 2}");
-                //При mass.Length == 2 ошибка
+
+                Console.WriteLine($"Массив чётный. Числа в середине масива * 2 - {mass[k1 - 1] * 2}, {mass[k1] * 2}");
+
+                mass[k1-1] *= 2;
+                mass[k1] *= 2;
+
             }
             else
             {
                 Console.WriteLine($"Массив нечётный. Число в середине массива * 2 - {mass[k1] * 2}");
+                mass[k1] *= 2;
             }
-            
+
 
             //Значения ввести самому
             // Считать два числа 1 длина массива 2 стартовое значение 3 шаг изменения.
@@ -276,9 +297,9 @@ namespace HomeWork1
 
 
 
-        }
+        }//Массив наоборот
 
-        static void Task5()
+        static void Task5() //
         {
             Console.WriteLine("Type     | Min                            | Max                           ");
             Console.WriteLine($"Byte     | {byte.MinValue,-31}| {byte.MaxValue,-32}");
@@ -356,6 +377,75 @@ namespace HomeWork1
 
         }
 
+        static void Task6()//Фибоначи
+        {
+            //Пользователь вводит длину массива.
+            //А тебе нужно создать массив указанной длины и заполнить его последовательностью Фибоначи(посмотри на вики) начиная с 0.
+
+
+            Console.WriteLine("Введите длину массива!");
+            string dlinaMSt = Console.ReadLine();
+            int dlinaMint = int.Parse(dlinaMSt);
+
+            int[] mass = new int[dlinaMint];
+
+            Console.WriteLine("Введите первое число!");
+            string xSt = Console.ReadLine();
+            int x = int.Parse(xSt);
+            mass[0] = x;
+
+            if (mass.Length > 1)
+            {
+                Console.WriteLine("Введите второе число!");
+                string ySt = Console.ReadLine();
+                int y = int.Parse(ySt);
+                mass[1] = y;
+            }
+            
+
+
+            for (int i = 2; i < mass.Length; i++)
+            {
+                mass[i] = mass[i - 1] + mass[i - 2];
+            }
+            
+            /*
+            
+            int c;
+
+            for (int j = 0, i = 1, k = 2; (j < dlinaMint) ^ (i < dlinaMint) ^ (k < dlinaMint); j += 3, i += 3, k += 3)
+            {
+                mass[j] = x;
+                mass[i] = y;
+                c = x + y;
+                mass[k] = c;
+                x = c + y;
+                y = c + x;
+
+            }
+
+            */
+
+            Console.Write("[");
+
+            for (int i = 0; i < mass.Length; i++)
+            {
+                Console.Write(mass[i]);
+                if (i < mass.Length - 1)
+                {
+                    Console.Write(", ");
+                }
+
+            }
+
+            Console.WriteLine("]");
+
+
+        }
+
+        //Пять чисел в массив разделённых пробелами, фильтр символов. Считывание только целых чисел.
+        //Фибоначи
 
     }
+
 }
