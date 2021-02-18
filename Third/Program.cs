@@ -32,7 +32,7 @@ namespace Third
             }
         }
 
-        static void Task2()
+        static void Task2() //Bool и TryParse
         {
             Console.WriteLine("Введите символ!");
             string vvod = Console.ReadLine();
@@ -55,7 +55,7 @@ namespace Third
             }
         }
 
-        static void Task3()
+        static void Task3() //Больше/меньше 5 или не число
         {
             Console.WriteLine("Введите символ!");
             string vvod = Console.ReadLine();
@@ -78,13 +78,12 @@ namespace Third
             }
         }
 
-        static void Task4()
+        static void Task4() //if else && || "И" и "Или"
         {
             Console.WriteLine("Введите символ!");
             string vvod = Console.ReadLine();
             bool IsParsed = int.TryParse(vvod, out int Znach);
-            //Должно быть не число, строка должна содержать либо точку либо вертикальную черту, но не должна быть равна "|NOT".
-            //!vvod.Equals("|NOT", StringComparison.CurrentCultureIgnoreCase))  Позволяет игнорировать регистр. Сравнивает строку с переданной строкой процедурным методом
+            
             if (!IsParsed && (vvod.IndexOf('.') > -1 || vvod.IndexOf('|') > -1) && /*vvod != "|NOT"*/ vvod.ToUpper() != "|NOT")
             {
                 Console.WriteLine("Соблюдены");
@@ -96,7 +95,7 @@ namespace Third
 
         }
 
-        static void Task5()
+        static void Task5() //Инкримент Декримент
         {
             int test = 1;
             Console.WriteLine(test);
@@ -107,7 +106,7 @@ namespace Third
 
         }
 
-        static void Task6()
+        static void Task6() //Цикл While
         {
             int zero = 0;
             while (zero < 5)   //Объявлениие одного из видов цикла.
@@ -118,7 +117,7 @@ namespace Third
             Console.WriteLine($"{zero}, Posle cikla!");
 
         }
-        static void Task7()
+        static void Task7() //Цикл DO
         {
             int zero = 5;
             do // do один раз заходит в тело цикла и выполняет его
@@ -129,7 +128,7 @@ namespace Third
             Console.WriteLine($"{zero}, Posle cikla!");
 
         }
-        static void Task8()
+        static void Task8() //Цикл Switch
         {
             int zero = 5;
             switch (zero) //Аналог if else if проверяет значения
@@ -158,14 +157,14 @@ namespace Third
             }
 
         }
-        static void Task9()
+        static void Task9() //Цикл FOR
         {//for задаёт количество повторений цикла условием
             for (int zero = 0; zero < 5; zero++)
             {
                 Console.WriteLine("{zero}, V cikle!");
             }
         }
-        static void Task10()
+        static void Task10() //Операторы Break/continue
         {
             string Hi = "Hello world!";
             for (int zero = 0; zero < Hi.Length; zero++) //Фрагмент кода вызыается "TAB"

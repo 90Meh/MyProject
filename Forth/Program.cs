@@ -7,11 +7,10 @@ namespace Forth
        
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            task2();
+            task1();
         }
 
-        static void task1()
+        static void task1() //ReadKey
         {
             while (true)
             {
@@ -23,7 +22,7 @@ namespace Forth
             }
         }
 
-        static void printMass(object[] mass)
+        static void printMass(object[] mass) //Вывод массива 
         {
             Console.Write("[");
 

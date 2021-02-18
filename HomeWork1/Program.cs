@@ -11,7 +11,7 @@ namespace HomeWork1
     {
         static void Main(string[] args)
         {
-            Task6();
+            Task7();
         }
         static void printMass(object[] mass)
         {
@@ -119,8 +119,11 @@ namespace HomeWork1
 
         }
 
-        static void Task3()
+        static void Task3() //switch 
         {
+            //Должно быть не число, строка должна содержать либо точку либо вертикальную черту, но не должна быть равна "|NOT".
+            //!vvod.Equals("|NOT", StringComparison.CurrentCultureIgnoreCase))  Позволяет игнорировать регистр. 
+            //Сравнивает строку с переданной строкой процедурным методом
             Console.WriteLine("Vvedite stroku!");
             string vvod = Console.ReadLine();
             for (int NomSim = 0; NomSim < vvod.Length; NomSim++)
@@ -299,7 +302,7 @@ namespace HomeWork1
 
         }//Массив наоборот
 
-        static void Task5() //
+        static void Task5() //Вывод числовых переменных MAX MIN
         {
             Console.WriteLine("Type     | Min                            | Max                           ");
             Console.WriteLine($"Byte     | {byte.MinValue,-31}| {byte.MaxValue,-32}");
@@ -443,9 +446,61 @@ namespace HomeWork1
 
         }
 
-        //Пять чисел в массив разделённых пробелами, фильтр символов. Считывание только целых чисел.
-        //Фибоначи
+        static void Task7()
+        {
+            Console.WriteLine("Введите пять чисел разделяя их пробелами!");
+            string[] MassSTR = new string[5];
+            string znach = "";
+            int PozM = 0;
 
+            while (PozM < 5)
+            {
+                ConsoleKeyInfo key = Console.ReadKey();
+               
+
+                if (key.KeyChar == ' ')
+                {
+                    bool ParsZ = int.TryParse(znach, out int znach1);
+                    if (ParsZ && znach1 % 2 == 0)
+                    {
+
+                    }
+                    else
+                    {
+                        znach = "0";
+                    }
+                    MassSTR[PozM] = znach;
+                    PozM++;
+                    znach = "";
+                }
+                else
+                {
+                    znach += key.KeyChar;
+                    
+                }
+
+            }
+
+            Console.WriteLine();
+            Console.Write("[");
+
+            for (int i = 0; i < MassSTR.Length; i++)
+            { 
+                Console.Write(MassSTR[i]);
+                //if (mass.Length - 2 >= i)
+                if (i < MassSTR.Length - 1)
+                {
+                    Console.Write(", ");
+                }
+
+            }
+
+            Console.WriteLine("]");
+
+
+            //Пять чисел в массив разделённых пробелами, фильтр символов. Считывание только целых чисел.
+            //Фибоначи
+        }
     }
 
 }
