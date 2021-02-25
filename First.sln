@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Second", "Second\Second.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Third", "Third\Third.csproj", "{C40572A6-E6CD-471F-B555-5BEC0500948F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forth", "Forth\Forth.csproj", "{37988DDD-0C25-4F54-B076-E9E57A93A12F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Forth", "Forth\Forth.csproj", "{37988DDD-0C25-4F54-B076-E9E57A93A12F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiwes", "Fiwes\Fiwes.csproj", "{23FCDC23-CBE4-4F54-9DA7-D07A3D18E2C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{37988DDD-0C25-4F54-B076-E9E57A93A12F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37988DDD-0C25-4F54-B076-E9E57A93A12F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37988DDD-0C25-4F54-B076-E9E57A93A12F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23FCDC23-CBE4-4F54-9DA7-D07A3D18E2C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23FCDC23-CBE4-4F54-9DA7-D07A3D18E2C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23FCDC23-CBE4-4F54-9DA7-D07A3D18E2C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23FCDC23-CBE4-4F54-9DA7-D07A3D18E2C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

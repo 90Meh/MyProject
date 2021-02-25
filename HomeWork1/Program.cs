@@ -446,7 +446,7 @@ namespace HomeWork1
 
         }
 
-        static void Task7()
+        static void Task7() //Чётные числа в массив
         {
             Console.WriteLine("Введите пять чисел разделяя их пробелами!");
             string[] MassSTR = new string[5];
@@ -460,15 +460,12 @@ namespace HomeWork1
 
                 if (key.KeyChar == ' ')
                 {
-                    bool ParsZ = int.TryParse(znach, out int znach1);
-                    if (ParsZ && znach1 % 2 == 0)
-                    {
-
-                    }
-                    else
+                    bool ParsZ = double.TryParse(znach, out double znach1);
+                    if (!ParsZ || znach1 % 2 != 0)
                     {
                         znach = "0";
                     }
+
                     MassSTR[PozM] = znach;
                     PozM++;
                     znach = "";
@@ -497,10 +494,16 @@ namespace HomeWork1
 
             Console.WriteLine("]");
 
+            
+
 
             //Пять чисел в массив разделённых пробелами, фильтр символов. Считывание только целых чисел.
             //Фибоначи
         }
+
+        // Массив double replace
+        //Class1 дописать метод вернуть строку перечисляющюу значения всех филдов подписанных.
+        //Перед этим поговорить с пользователем.
     }
 
 }
