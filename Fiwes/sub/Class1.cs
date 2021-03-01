@@ -47,9 +47,16 @@ namespace Fiwes.sub
             private set;
         }
 
-        public Class1() //Конструктор начальное состояние объекта
+        public Class1() //Конструктор начальное состояние объекта. Перегрузка. Одно имя с разными параметрами.
         {
             PropS = State.NotStarted;
+        }
+
+        public Class1(int field, int field2)
+        {
+            this.Field = field;
+            this.Field2 = field2;
+            PropS = State.InProgress;
         }
 
         public void SetField2(int Param1)
@@ -87,5 +94,77 @@ namespace Fiwes.sub
                 Console.WriteLine($"Вы ввели {key.KeyChar}");
             }
         }
+
+        public int Overloaded(int s1)//перегруженный метод   подпись метода
+        {
+            return Field + s1;
+
+        }
+
+        public int Overloaded(int s1, int s2)
+        {
+            return Overloaded(s1) + s2;
+        }
+
+        public int Recurce(int r1) //Рекурсия
+        {
+            /*  if (r1 ==1)
+              {
+                  return 1;
+              }
+
+              return r1 + Recurce(r1 - 1);*/
+            return r1 == 1 ? 1 : r1 + Recurce(r1 - 1);  //Тернарные операторы """"?"""". IF записанный строкой
+        }
+        
+        public int Sum(params int[] slag) //params неограниченное число параметров последний параметр в массиве
+        {
+            int sum = 0;
+            foreach (int item in slag)
+            {
+                sum+= item;
+            }
+            return sum;
+        }
+
+        public double Calc(Operation operation, params double[] slag )
+        {
+            var result = slag[0];
+            /*{
+                Operation.Minus => slag[0];
+                o
+            }*/
+            var isFirst = true;
+            foreach (var item in slag)
+            {
+                if (item==4)
+                {
+                    throw new Exception("Я не люблю четвёрки!"); //Всегда прерывает выполнение
+                }
+                if (isFirst)
+                {
+                    isFirst = false;
+                    continue;
+                }
+                switch (operation)
+                {
+                    case Operation.Plus:
+                        result += item;
+                        break;
+                    case Operation.Minus:
+                        result -= item;
+                        break;
+                    case Operation.Multiple:
+                        result *= item;
+                        break;
+                    case Operation.Division:
+                        result /= item;
+                        break;
+                }
+                
+            }
+            return result;
+        }
+
     }
 }

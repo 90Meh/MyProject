@@ -11,7 +11,7 @@ namespace Fiwes
     {
         static void Main(string[] args)
         {
-            task3();
+            task4();
         }
 
         static void task1 ()
@@ -82,6 +82,41 @@ namespace Fiwes
             }
             
             c1.ZnachF();
+        }
+
+        static void task4()
+        {
+            var c1 = new Class1(4, 2); //var определяет тип переменной при иницииализации значения.
+            Console.WriteLine(c1.Field);
+            Console.WriteLine(c1.Prop3);
+            Console.WriteLine(c1.PropS);
+            Console.WriteLine(c1.Overloaded(1));
+            Console.WriteLine(c1.Overloaded(1,2));
+            Console.WriteLine(c1.Recurce(5));
+            Console.WriteLine(c1.Sum(2, 4, 6, 8));
+            Console.WriteLine(c1.Sum());
+            Console.WriteLine(c1.Calc(Operation.Minus, 10, 3, 3));
+            try   //Ловля ошибок\исключений.
+            {
+                Console.WriteLine(c1.Calc(Operation.Division, 10, 5, 34));
+            }
+            catch(DivideByZeroException ex)
+            {
+                Console.WriteLine("Не дели на ноль окаянный!");
+                Console.WriteLine(ex.Message);
+            }
+            catch(Exception exAll)
+            {
+                Console.WriteLine("Что то пошло не так, я надеюсь это тебе поможет");
+                Console.WriteLine(exAll.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Всегда!");
+            }
+
+            Console.WriteLine(c1.Calc(Operation.Multiple, 10, 3, 3));
+            Console.WriteLine(c1.Calc(Operation.Plus, 10, 3, 3));
         }
 
     }
