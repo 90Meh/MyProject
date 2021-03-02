@@ -11,7 +11,7 @@ namespace Fiwes
     {
         static void Main(string[] args)
         {
-            task4();
+            task5();
         }
 
         static void task1 ()
@@ -118,6 +118,16 @@ namespace Fiwes
             Console.WriteLine(c1.Calc(Operation.Multiple, 10, 3, 3));
             Console.WriteLine(c1.Calc(Operation.Plus, 10, 3, 3));
         }
+
+        static void task5()
+        {
+            var c1 = new Class1(4, 7);
+            Console.WriteLine("Введите ваше имя!");
+            string name = Console.ReadLine();
+            c1.Name1 = name;
+            Console.WriteLine(c1.Hi);
+        }
+
 
     }
 }

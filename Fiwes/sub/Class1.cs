@@ -11,6 +11,7 @@ namespace Fiwes.sub
     {
         public int Field;
         private int Field2;
+        public string Name1;
 
         public int Prop1
         {
@@ -38,6 +39,16 @@ namespace Fiwes.sub
             get
             {
                 return Field2;
+            }
+        }
+
+        public string Hi
+        {
+
+             get
+            {
+                string p2 = $"Привет {Name1} мои поля равны {Field} и {Field2}!";
+                return p2;
             }
         }
 
@@ -70,13 +81,18 @@ namespace Fiwes.sub
             PropS = State.InProgress;
         }
 
+        public void Name()
+        {
+            this.Name1 = Console.ReadLine();
+        }
+
         public int GetFieldSumm()
         {
             PropS = State.Finished;
             return Field + Field2;
         }
 
-        
+
         public void ZnachF()
         {
             Console.WriteLine("Нажмите пробел чтобы получить значение полей");
@@ -116,18 +132,18 @@ namespace Fiwes.sub
               return r1 + Recurce(r1 - 1);*/
             return r1 == 1 ? 1 : r1 + Recurce(r1 - 1);  //Тернарные операторы """"?"""". IF записанный строкой
         }
-        
+
         public int Sum(params int[] slag) //params неограниченное число параметров последний параметр в массиве
         {
             int sum = 0;
             foreach (int item in slag)
             {
-                sum+= item;
+                sum += item;
             }
             return sum;
         }
 
-        public double Calc(Operation operation, params double[] slag )
+        public double Calc(Operation operation, params double[] slag)
         {
             var result = slag[0];
             /*{
@@ -137,7 +153,7 @@ namespace Fiwes.sub
             var isFirst = true;
             foreach (var item in slag)
             {
-                if (item==4)
+                if (item == 4)
                 {
                     throw new Exception("Я не люблю четвёрки!"); //Всегда прерывает выполнение
                 }
@@ -161,7 +177,7 @@ namespace Fiwes.sub
                         result /= item;
                         break;
                 }
-                
+
             }
             return result;
         }
