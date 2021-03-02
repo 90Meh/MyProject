@@ -124,8 +124,7 @@ namespace Fiwes
             var c1 = new Class1(4, 7);
             Console.WriteLine("Введите ваше имя!");
             string name = Console.ReadLine();
-            c1.Name1 = name;
-            Console.WriteLine(c1.Hi);
+            Console.WriteLine(c1.Hellow(name));
         }
 
 

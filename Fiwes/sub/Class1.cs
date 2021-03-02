@@ -182,5 +182,10 @@ namespace Fiwes.sub
             return result;
         }
 
+        public string Hellow(string nameParam)
+        {
+            return $"Привет {nameParam} мои поля равны {Field} и {Field2}!";
+        }
+
     }
 }
