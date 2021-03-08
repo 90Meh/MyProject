@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace HomeWork1
 {
@@ -204,9 +205,9 @@ namespace HomeWork1
             int[] mass2 = new int[mass.Length];
             // Array.Copy(mass, mass2, mass.Length);
 
-            for (int i = mass.Length-1; i >= 0 ; i--)
+            for (int i = mass.Length - 1; i >= 0; i--)
             {
-                mass2[mass.Length -i-1] = mass[i];
+                mass2[mass.Length - i - 1] = mass[i];
 
                 /*
                  * mass mass2
@@ -271,14 +272,14 @@ namespace HomeWork1
 
 
             int k1 = mass.Length / 2;
-           //Console.WriteLine(mass.Length % 2)
+            //Console.WriteLine(mass.Length % 2)
 
             if (mass.Length % 2 == 0)
             {
 
                 Console.WriteLine($"Массив чётный. Числа в середине масива * 2 - {mass[k1 - 1] * 2}, {mass[k1] * 2}");
 
-                mass[k1-1] *= 2;
+                mass[k1 - 1] *= 2;
                 mass[k1] *= 2;
 
             }
@@ -404,14 +405,14 @@ namespace HomeWork1
                 int y = int.Parse(ySt);
                 mass[1] = y;
             }
-            
+
 
 
             for (int i = 2; i < mass.Length; i++)
             {
                 mass[i] = mass[i - 1] + mass[i - 2];
             }
-            
+
             /*
             
             int c;
@@ -446,34 +447,65 @@ namespace HomeWork1
 
         }
 
-        static void Task7() //Чётные числа в массив  <БЭКСПЭЙС маст хэв
+        static void Task7() //числа в массив  <БЭКСПЭЙС маст хэв
         {
             Console.WriteLine("Введите пять чисел разделяя их пробелами!");
             string[] MassSTR = new string[5];
+            Stack<string> MassTemp = new Stack<string>(); //Массив который увеличивается по мере заполнения LIST      Очередь Queue
             string znach = "";
             int PozM = 0;
 
             while (PozM < 5)
             {
-                ConsoleKeyInfo key = Console.ReadKey();
-               
+                ConsoleKeyInfo key = Console.ReadKey(true);
+
+                if (key.Key == ConsoleKey.Backspace)
+                {
+                    //Диапазон значение enum
+                    if (znach == "")
+                    {
+                        if (MassTemp.Count == 0)
+                        {
+                            continue;
+                        }
+                        znach = MassTemp.Pop();
+                        if (PozM > 0 && znach == MassSTR[PozM - 1])
+                        {
+                            PozM--;
+                        }
+                    }
+                    else
+                    {
+                        znach = znach.Substring(0, znach.Length - 1);
+                    }
+                    Console.CursorLeft--;
+                    Console.Write(' ');
+                    Console.CursorLeft--;
+                    continue;
+                }
+
+                Console.Write(key.KeyChar);
 
                 if (key.KeyChar == ' ')
                 {
-                    bool ParsZ = double.TryParse(znach, out double znach1);
-                    if (!ParsZ || znach1 % 2 != 0)
+                    bool parsZ = double.TryParse(znach, out double znach1);
+                    if (!parsZ)
                     {
-                        znach = "0";
+                        MassTemp.Push(znach);
+                        znach = "";
+                        continue;
                     }
 
                     MassSTR[PozM] = znach;
                     PozM++;
+                    MassTemp.Push(znach);
                     znach = "";
+
+
                 }
                 else
                 {
                     znach += key.KeyChar;
-                    
                 }
 
             }
@@ -482,7 +514,7 @@ namespace HomeWork1
             Console.Write("[");
 
             for (int i = 0; i < MassSTR.Length; i++)
-            { 
+            {
                 Console.Write(MassSTR[i]);
                 //if (mass.Length - 2 >= i)
                 if (i < MassSTR.Length - 1)
@@ -494,7 +526,7 @@ namespace HomeWork1
 
             Console.WriteLine("]");
 
-            
+
 
 
             //Пять чисел в массив разделённых пробелами, фильтр символов. Считывание только целых чисел.

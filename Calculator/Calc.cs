@@ -41,5 +41,10 @@ namespace Calculator
             return _state /= d1;
         }
 
+        public void Clear()
+        {
+            _state = 0;
+        }
+
     }
 }
