@@ -4,7 +4,7 @@ namespace Forth
 {
     class Program
     {
-       
+
         static void Main(string[] args)
         {
             task1();
@@ -17,8 +17,8 @@ namespace Forth
                 ConsoleKeyInfo key = Console.ReadKey(true); //Возвращает нажатие клавиши с модификаторами
                 // Console.ReadKey   ConsoleKeyInfo возвращает сложный объект
                 Console.WriteLine($"{nameof(key.KeyChar)}: {key.KeyChar}, {nameof(key.Key)}: {key.Key}, {nameof(key.Modifiers)}: {key.Modifiers}!");
-                
-                    
+
+
             }
         }
 
@@ -42,7 +42,7 @@ namespace Forth
 
         static void task2()
         {
-                       
+
             Console.WriteLine("Введите длину массива!");
             string DLMassStr = Console.ReadLine();
             int DLMassInt = int.Parse(DLMassStr);
@@ -53,10 +53,10 @@ namespace Forth
             while (PozM < MassStr.Length)
             {
                 ConsoleKeyInfo key = Console.ReadKey();
-                
+
                 if (key.KeyChar == ' ')
                 {
-                    MassStr[PozM]= slovo;
+                    MassStr[PozM] = slovo;
                     PozM++;
                     slovo = "";
                 }
@@ -64,7 +64,7 @@ namespace Forth
                 {
                     slovo += key.KeyChar;
                 }
-             
+
             }
 
             printMass(MassStr);

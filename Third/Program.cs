@@ -83,7 +83,7 @@ namespace Third
             Console.WriteLine("Введите символ!");
             string vvod = Console.ReadLine();
             bool IsParsed = int.TryParse(vvod, out int Znach);
-            
+
             if (!IsParsed && (vvod.IndexOf('.') > -1 || vvod.IndexOf('|') > -1) && /*vvod != "|NOT"*/ vvod.ToUpper() != "|NOT")
             {
                 Console.WriteLine("Соблюдены");
@@ -231,7 +231,7 @@ namespace Third
             }
 
             Console.WriteLine("]");
-            
+
         }
 
 
