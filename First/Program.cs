@@ -102,7 +102,6 @@ namespace First
             //int perem = 0;
             char CH1 = str1[perem]; //Квадратные скобки позиция символа
             string str2 = str1.Substring(0, 5);
-            Console.WriteLine(str2);
             string str3 = str1.Substring(6,5);
             Console.WriteLine(str3);
             char CH2 = str1[11];
@@ -114,6 +113,7 @@ namespace First
             Console.WriteLine(str5);
 
             Console.WriteLine (str1.Remove(6, 5));
+            Console.WriteLine(str2);
             int poz = str1.IndexOf('o'); //Ищет позицию символа по строке, если его нет возвр. -1 str1.LastIndexOf ищет с конца
             Console.WriteLine(poz);
             int poz2 = str1.IndexOf('o',poz+1);

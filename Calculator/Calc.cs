@@ -6,6 +6,11 @@ namespace Calculator
 {
     class Calc
     {
+        public static string[] AvailableOperations()
+        {
+            return new string[] { "-", "*", "/", "+", "C" };
+        }
+
         private double _state = 0;
 
         public double State

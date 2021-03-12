@@ -24,7 +24,7 @@ namespace Calculator
             Calc calc = new Calc(nachD);
             while (true)
             {
-                Console.WriteLine("Введите один из типов операции: \"+\", \"-\", \"/\", \"*\", \"C\".");
+                Console.WriteLine($"Введите один из типов операции: {string.Join(", ", Calc.AvailableOperations())}");  //Join ?
                 Console.WriteLine("Нажмите соответствующий символ и нажмите  Enter.");
                 String oper = Console.ReadLine().ToUpper();
                 bool operandB = false;
@@ -70,5 +70,7 @@ namespace Calculator
 
             }
         }
+
+
     }
 }
