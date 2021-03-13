@@ -21,7 +21,7 @@ namespace Calculator
             while (!nach);
 
 
-            Calc calc = new Calc(nachD);
+            CalcInteger calc = new CalcInteger(nachD);
             while (true)
             {
                 Console.WriteLine($"Введите один из типов операции: {string.Join(", ", Calc.AvailableOperations())}");  //Join ?
@@ -29,7 +29,7 @@ namespace Calculator
                 String oper = Console.ReadLine().ToUpper();
                 bool operandB = false;
                 double operandD = 0;
-                if (oper != "C")
+                if (oper != "C" && oper != "MS" && oper != "MR" && oper != "MC" && oper != "M+" && oper != "M-")
                 {
                     do
                     {
@@ -61,6 +61,22 @@ namespace Calculator
                     case "C":
                         calc.Clear();
                         break;
+                    //case "MS":
+                    //    calc.MemorySave();
+                    //    break;
+                    //case "MR":
+                    //    calc.MemoryRecord();
+                    //    break;
+                    //case "MC":
+                    //    calc.MemoryClear();
+                    //    break;
+                    //case "M+":
+                    //    calc.MemoryPlus();
+                    //    break;
+                    //case "M-":
+                    //    calc.MemoryMinus();
+                    //    break;
+
                     default:
                         Console.WriteLine("Операция отсутвует!");
                         break;

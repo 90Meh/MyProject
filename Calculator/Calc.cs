@@ -4,8 +4,9 @@ using System.Text;
 
 namespace Calculator
 {
-    class Calc
+    class Calc : ICalc
     {
+
         public static string[] AvailableOperations()
         {
             return new string[] { "-", "*", "/", "+", "C" };
@@ -18,6 +19,10 @@ namespace Calculator
             get
             {
                 return _state;
+            }
+            protected set //Доступен только классу и классам потомкам
+            {
+                _state = value;
             }
         }
 
