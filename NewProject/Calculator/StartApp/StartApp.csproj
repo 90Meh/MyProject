@@ -5,4 +5,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CalcInterface\CalcInterface.csproj" />
+    <ProjectReference Include="..\SimpleCalc\SimpleCalc.csproj" />
+  </ItemGroup>
+
 </Project>
