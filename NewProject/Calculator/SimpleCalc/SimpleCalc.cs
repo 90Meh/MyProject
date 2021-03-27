@@ -16,16 +16,16 @@ namespace SimpleCalc
         public double State //Автосвойство
         {
             get;
-            private set;
+            protected set;
         }
 
 
-        public string[] GetAvailableOperations()
+        public virtual string[] GetAvailableOperations()
         {
             return new string[] { PlusOperation, MinusOperation, MultiOperation, DivideOperation, EqualOperation, ClearOperation };
         }
 
-        public void SetOperand(double operand)
+        public virtual void SetOperand(double operand)
         {
             switch (_operation)
             {
@@ -49,7 +49,7 @@ namespace SimpleCalc
             }
         }
 
-        public void SetOperation(string operation)
+        public virtual void SetOperation(string operation)
         {
             operation = operation.ToUpper();
 
