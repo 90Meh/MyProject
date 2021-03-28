@@ -4,13 +4,17 @@ namespace CalcInterface
 {
     public interface ICalc
     {
+        StepType NextStep
+        {
+            get;
+        }
         double State
         {
             get;
         }
         string[] GetAvailableOperations();
-        void SetOperation(string operation);
-        void SetOperand(double operand);
+        bool SetOperation(string operation);
+        bool SetOperand(double operand);
 
     }
 }

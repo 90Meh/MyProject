@@ -24,6 +24,7 @@ namespace StartApp
 
             //CalcService service = new CalcService(calc);
             //service.Start();
+
             new CalcService(calc).Start();
         }
     }

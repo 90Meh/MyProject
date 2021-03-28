@@ -20,26 +20,52 @@ namespace StartApp
             Console.WriteLine($"Доступные операции: {string.Join(", ", _calc.GetAvailableOperations())}");
             while (true)
             {
-                Console.WriteLine("Ведите зачение!");
-                double znach;
-                bool parsed;
-                do
+                try
                 {
-                    parsed = double.TryParse(Console.ReadLine(), out znach);
-                    if (!parsed)
+
+                    bool showState = false;
+
+                    if (_calc.NextStep == StepType.Operation)
                     {
-                        Console.WriteLine("Введено не число, введите число!");
+                        Console.WriteLine("Выберете операцию!");
+                        string oper = Console.ReadLine();
+                        showState = _calc.SetOperation(oper);
+
+                    }
+                    else
+                    {
+                        double znach;
+                        bool parsed;
+                        do
+                        {
+                            Console.WriteLine("Ведите зачение!");
+                            parsed = double.TryParse(Console.ReadLine(), out znach);
+                            if (!parsed)
+                            {
+                                Console.WriteLine("Введено не число, введите число!");
+                            }
+
+                        }
+                        while (!parsed);
+                        showState = _calc.SetOperand(znach);
                     }
 
-                }
-                while (!parsed);
-                _calc.SetOperand(znach);
+                    if (showState)
+                    {
+                        Console.WriteLine($"Текущее значение = {_calc.State}");
+                    }
 
-                Console.WriteLine("Выберете операцию!");
-                string oper = Console.ReadLine();
-                _calc.SetOperation(oper);
-                Console.WriteLine($"Текущее значение = {_calc.State}");
-                
+
+                }
+                catch (DivideByZeroException)
+                {
+                    Console.WriteLine("Деление на ноль невозможно!");
+                }
+                catch (WrongOperationException)
+                {
+                    Console.WriteLine("Выбрана недоступная операция!");
+                }
+
             }
 
         }

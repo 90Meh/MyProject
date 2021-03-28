@@ -11,7 +11,7 @@ namespace Fiwes
     {
         static void Main(string[] args)
         {
-            task5();
+            task4();
         }
 
         static void task1 ()
