@@ -1,5 +1,6 @@
 ﻿using CalcInterface;
 using System;
+using System.Linq;
 
 namespace SimpleCalc
 {
@@ -55,8 +56,7 @@ namespace SimpleCalc
                     }
                     State /= operand;
                     break;
-                default:
-                    throw new WrongOperationException(); //Break Return Throw завершают case или default
+                    
             }
             NextStep = StepType.Operation;
             return result;
@@ -66,6 +66,10 @@ namespace SimpleCalc
         {
             operation = operation.ToUpper();
             bool result = false;
+            if (!GetAvailableOperations().Contains(operation))
+            {
+                throw new WrongOperationException(); //Break Return Throw завершают case или default
+            }
 
             switch (operation)
             {

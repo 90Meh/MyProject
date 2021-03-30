@@ -53,6 +53,13 @@ namespace StartApp
                     if (showState)
                     {
                         Console.WriteLine($"Текущее значение = {_calc.State}");
+
+                        IMemCalc mcalc = _calc as IMemCalc;   //Возвращает null при неудачном преобразовании.
+                        // if (_calc is IMemCalc && ((IMemCalc)_calc).MemState)  //Проверка на реализацию определённого типа.
+                        if (_calc is IMemCalc memCalc && memCalc.MemState)
+                        {
+                            Console.WriteLine("В памяти хранится значение!");
+                        }
                     }
 
 

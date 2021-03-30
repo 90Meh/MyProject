@@ -1,9 +1,10 @@
-﻿using System;
+﻿using CalcInterface;
+using System;
 using System.Linq;
 
 namespace CalcMem
 {
-    public class CalcWithMemory : SimpleCalc.SimpleCalc
+    public class CalcWithMemory : SimpleCalc.SimpleCalc, IMemCalc 
     {
         private const string MemorySaveOperation = "MS";
         private const string MemoryRecordOperation = "MR";
@@ -11,7 +12,9 @@ namespace CalcMem
         private const string MemoryPlusOperation = "M+";
         private const string MemoryMinusOperation = "M-";
 
-        public double? _memory;
+        private double? _memory;
+
+        public bool MemState => _memory.HasValue;
 
         public override string[] GetAvailableOperations()
         {
@@ -39,20 +42,20 @@ namespace CalcMem
                     if (_memory.HasValue)
                     {
                         State = _memory.Value;
-                    }                    
+                        result = true;
+                    }
                     break;
                 case MemoryClearOperation:
                     _memory = null;
                     break;
                 case MemoryPlusOperation:
                     _memory = (_memory ?? 0) + State;
-                    return result = true;
+                    break;
                 case MemoryMinusOperation:
                     _memory =  (_memory ?? 0) - State;
-                    return result = true;
-                default:
-                    base.SetOperation(operation);
                     break;
+                default:
+                    return base.SetOperation(operation);
             }
 
             return result;
