@@ -25,7 +25,6 @@ namespace SimpleCalc
             protected set;
         }
 
-
         public virtual string[] GetAvailableOperations()
         {
             return new string[] { PlusOperation, MinusOperation, MultiOperation, DivideOperation, EqualOperation, ClearOperation };

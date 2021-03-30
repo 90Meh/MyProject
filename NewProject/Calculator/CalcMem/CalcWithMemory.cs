@@ -11,7 +11,7 @@ namespace CalcMem
         private const string MemoryPlusOperation = "M+";
         private const string MemoryMinusOperation = "M-";
 
-        private double? _memory; 
+        public double? _memory;
 
         public override string[] GetAvailableOperations()
         {
@@ -25,9 +25,10 @@ namespace CalcMem
             }).ToArray();
         }
 
-        public override void SetOperation(string operation)
+        public override bool SetOperation(string operation)
         {
             operation = operation.ToUpper();
+            bool result = false;
             //base.SetOperation(operation);
             switch (operation)
             {
@@ -45,14 +46,17 @@ namespace CalcMem
                     break;
                 case MemoryPlusOperation:
                     _memory = (_memory ?? 0) + State;
-                    break;
+                    return result = true;
                 case MemoryMinusOperation:
                     _memory =  (_memory ?? 0) - State;
-                    break;
+                    return result = true;
                 default:
                     base.SetOperation(operation);
                     break;
             }
+
+            return result;
+
         }
     }
 }

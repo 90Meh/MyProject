@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CalcInterface\CalcInterface.csproj" />
+    <ProjectReference Include="..\CalcMem\CalcMem.csproj" />
     <ProjectReference Include="..\SimpleCalc\SimpleCalc.csproj" />
   </ItemGroup>
 
