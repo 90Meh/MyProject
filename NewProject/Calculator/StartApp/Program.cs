@@ -11,6 +11,8 @@ namespace StartApp
             Console.WriteLine("Выберите свой калькулятор!");
             Console.WriteLine(" 1. SimpleCalc");
             Console.WriteLine(" 2. CalcWithMemory");
+            Console.WriteLine(" 3. CalcAngle");
+
             string choose = Console.ReadLine();
             ICalc calc;
             switch (choose)
@@ -20,6 +22,9 @@ namespace StartApp
                     break;
                 case "2":
                     calc = new CalcMem.CalcWithMemory();
+                    break;
+                case "3":
+                    calc = new CalcAngle.CalcSCTG();
                     break;
                 default:
                     Console.WriteLine("Нет доступного калькулятора!");
