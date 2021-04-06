@@ -12,7 +12,7 @@ namespace CalcInterface
         {
             get;
         }
-        
+
         string[] GetAvailableOperations();
         bool SetOperation(string operation);
         bool SetOperand(double operand);

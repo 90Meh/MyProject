@@ -12,6 +12,7 @@ namespace StartApp
             Console.WriteLine(" 1. SimpleCalc");
             Console.WriteLine(" 2. CalcWithMemory");
             Console.WriteLine(" 3. CalcAngle");
+            Console.WriteLine(" 4. SimpleEventCalc");
 
             string choose = Console.ReadLine();
             ICalc calc;
@@ -25,6 +26,9 @@ namespace StartApp
                     break;
                 case "3":
                     calc = new CalcAngle.CalcSCTG();
+                    break;
+                case "4":
+                    calc = new SimpleCalc.SimpleEventCalc();
                     break;
                 default:
                     Console.WriteLine("Нет доступного калькулятора!");

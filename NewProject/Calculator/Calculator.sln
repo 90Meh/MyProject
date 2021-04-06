@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleCalc", "SimpleCalc\Si
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalcMem", "CalcMem\CalcMem.csproj", "{84BA0104-2844-42C2-A8DB-AD9B965A857A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcAngle", "CalcAngle\CalcAngle.csproj", "{1504B250-36C0-4B9E-A9EC-4840582ABCE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalcAngle", "CalcAngle\CalcAngle.csproj", "{1504B250-36C0-4B9E-A9EC-4840582ABCE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcRound", "CalcRound\CalcRound.csproj", "{110732F4-361A-493E-B9B7-11716927262C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{1504B250-36C0-4B9E-A9EC-4840582ABCE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1504B250-36C0-4B9E-A9EC-4840582ABCE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1504B250-36C0-4B9E-A9EC-4840582ABCE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{110732F4-361A-493E-B9B7-11716927262C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{110732F4-361A-493E-B9B7-11716927262C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{110732F4-361A-493E-B9B7-11716927262C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{110732F4-361A-493E-B9B7-11716927262C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -17,7 +17,7 @@ namespace CalcAngle
         {
             get;
             protected set;
-        }
+        } = StepType.Operation;
 
         public double State
         {
