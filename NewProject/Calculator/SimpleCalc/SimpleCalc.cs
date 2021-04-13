@@ -20,7 +20,7 @@ namespace SimpleCalc
             protected set;
         } = StepType.Operand;
           
-        public double State //Автосвойство
+        public virtual double State //Автосвойство
         {
             get;
             protected set;

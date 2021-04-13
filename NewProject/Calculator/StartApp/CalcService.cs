@@ -36,19 +36,7 @@ namespace StartApp
                     {
                         Console.WriteLine("Выберете операцию!");
                         string oper = Console.ReadLine();
-                        switch (oper)
-                        {
-                            case "R":
-                                StateRound = true;
-                                break;
-                            case "0":
-                                StateRound = false;
-                                break;
-                            default:
-                                showState = _calc.SetOperation(oper);
-                                break;  
-                        }
-                        //showState = _calc.SetOperation(oper);
+                        showState = _calc.SetOperation(oper);
 
                     }
                     else
@@ -72,18 +60,6 @@ namespace StartApp
                     if (showState)
                     {
 
-                        if (StateRound)
-                        {
-                            int znachRound;
-                            bool ost;
-                            Console.WriteLine("Введите количество знаков после запятой!");
-                            ost = int.TryParse(Console.ReadLine(), out znachRound);
-                            if (ost)
-                            {
-                                Console.WriteLine($"Текущее значение = {Math.Round(_calc.State, znachRound)}");
-                            }
-                            
-                        }
                         Console.WriteLine($"Текущее значение = {_calc.State}");
 
                         //IMemCalc mcalc = _calc as IMemCalc;   //Возвращает null при неудачном преобразовании.
