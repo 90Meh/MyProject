@@ -13,7 +13,7 @@ namespace SimpleCalc
         private const string ClearOperation = "C";
         private const string EqualOperation = "=";
 
-        private string _operation = null;
+        public string _operation = null;
         public StepType NextStep
         {
             get;

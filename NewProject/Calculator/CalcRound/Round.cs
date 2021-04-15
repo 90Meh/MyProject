@@ -11,10 +11,12 @@ namespace CalcRound
         private bool stateRound = false;
         private int? valueRound = null;
 
-        public override double State 
+
+
+        public override double State
         {
-            get => valueRound.HasValue ? Math.Round(State, valueRound.Value) : State; //Однострочная запись
-            protected set => base.State = value; 
+            get => valueRound.HasValue ? Math.Round(base.State, valueRound.Value) : base.State; //Однострочная запись
+            protected set => base.State = value;
         }
 
         public override string[] GetAvailableOperations()
@@ -27,7 +29,8 @@ namespace CalcRound
 
         public override bool SetOperand(double operand)
         {
-            if (stateRound)
+            
+            if (stateRound && operand != 0)
             {
                 valueRound = Convert.ToInt32(operand);
                 stateRound = false;
@@ -35,7 +38,11 @@ namespace CalcRound
                 return true;
             }
 
+            valueRound = null;
+            stateRound = false;
+            NextStep = StepType.Operation;
             return base.SetOperand(operand);
+
         }
 
 
@@ -49,7 +56,7 @@ namespace CalcRound
                 case OnRound:
                     stateRound = true;
                     NextStep = StepType.Operand;
-                     break;
+                    break;
                 default:
                     return base.SetOperation(operation);
             }

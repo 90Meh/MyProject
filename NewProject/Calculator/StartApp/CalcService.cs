@@ -11,7 +11,6 @@ namespace StartApp
     class CalcService
     {
         private readonly ICalc _calc;
-        private bool StateRound = false;
         public CalcService(ICalc calc)
         {
             _calc = calc;

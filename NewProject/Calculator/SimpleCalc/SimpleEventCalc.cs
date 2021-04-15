@@ -36,12 +36,12 @@ namespace SimpleCalc
 
         public virtual bool SetOperand(double operand)
         {
-            bool result = true;
+            //bool result = true;
             switch (_operation)
             {
                 case null:
                     State = operand;
-                    result = false;
+                   // result = false;
                     break;
                 case PlusOperation:
                     State += operand;
@@ -68,7 +68,7 @@ namespace SimpleCalc
         public virtual bool SetOperation(string operation)
         {
             operation = operation.ToUpper();
-            bool result = false;
+           // bool result = false;
             if (!GetAvailableOperations().Contains(operation))
             {
                 throw new WrongOperationException(); //Break Return Throw завершают case или default
@@ -79,7 +79,7 @@ namespace SimpleCalc
                 case ClearOperation:
                     _operation = null;
                     State = 0;
-                    result = true;
+                   // result = true;
                     break;
                 case EqualOperation:
                     _operation = null;
