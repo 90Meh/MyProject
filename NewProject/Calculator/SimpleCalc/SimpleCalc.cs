@@ -56,7 +56,6 @@ namespace SimpleCalc
                     }
                     State /= operand;
                     break;
-                    
             }
             NextStep = StepType.Operation;
             return result;

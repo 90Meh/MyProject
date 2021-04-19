@@ -44,7 +44,7 @@ namespace StartApp
                         bool parsed;
                         do
                         {
-                            Console.WriteLine("Ведите зачение!");
+                            Console.WriteLine("Введите зачение!");
                             parsed = double.TryParse(Console.ReadLine(), out znach);
                             if (!parsed)
                             {

@@ -29,18 +29,24 @@ namespace CalcRound
 
         public override bool SetOperand(double operand)
         {
-            
-            if (stateRound && operand != 0)
+
+            if (stateRound)
             {
-                valueRound = Convert.ToInt32(operand);
-                stateRound = false;
+               valueRound = operand == 0 ? null : Convert.ToInt32(operand);
+                //if (operand == 0)
+                //{
+                //    valueRound = null;
+                //}
+                //else
+                //{
+                //    valueRound = Convert.ToInt32(operand);
+                //}
+
                 NextStep = StepType.Operation;
+                stateRound = false;
                 return true;
             }
 
-            valueRound = null;
-            stateRound = false;
-            NextStep = StepType.Operation;
             return base.SetOperand(operand);
 
         }

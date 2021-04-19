@@ -10,6 +10,7 @@
     <ProjectReference Include="..\CalcInterface\CalcInterface.csproj" />
     <ProjectReference Include="..\CalcMem\CalcMem.csproj" />
     <ProjectReference Include="..\CalcRound\CalcRound.csproj" />
+    <ProjectReference Include="..\DelegateCalculator\DelegateCalculator.csproj" />
     <ProjectReference Include="..\SimpleCalc\SimpleCalc.csproj" />
   </ItemGroup>
 
